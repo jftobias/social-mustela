@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesInicioSeccion.css')}}">
+    <title>Iniciar Seccion</title>
+</head>
+<body>
+    <form action="{{ url_for('iniciarSeccion_') }}" method="post" class="formulario" id="formulario">
+        <!--Grupo Correo-->
+        <div class="formulario__grupo" id="grupo__correo">
+            <label for="correo" class="formulario__label">Correo</label>
+            <div class="formulario__grupo-input">
+                <input type="text" name="correo" id="correo" class="formulario__input" placeholder="Correo" value="{{correo}}" required>
+            </div>
+        </div>
+        <!--Grupo Contraseña-->
+        <div class="formulario__grupo" id="grupo__contraseña">
+            <label for="contraseña" class="formulario__label">Contraseña</label>
+            <div class="formulario__grupo-input">
+                <input type="password" name="contraseña" id="contraseña" class="formulario__input" required>
+            </div>
+        </div>
+        <!--Grupo Recordar-->
+        <div class="formulario__grupo" id="grupo__recordar">
+            <label class="formulario__label">
+                <input class="formulario__checkbox" type="checkbox" name="recordar" id="recordar">
+                Recordar Inicio de Seccion
+            </label>
+        </div>
+        <!--Boton iniciar seccion-->
+        <div class="formulario__grupo formulario__grupo-btn-iniciar">
+            <button type="submit" class="formulario__btn">Iniciar Seccion</button>
+        </div>
+        <!--Registrar-->
+        <div class="formulario__grupo">
+            <a href="">Recuperar Contraseña</a>
+            <a href="">Registrarme</a>
+        </div>
+        {% if error is false %}
+            <div class="formulario__mensaje formulario__mensaje-activo" id="formulario__mensaje">
+                <p >El correo o la contraseña no son correctos</p>
+            </div>
+        {% endif %}
+    </form>
+    <script src="{{ url_for('static', filename='js/jsInicioSeccion.js')}}"></script>
+</body>
+</html>

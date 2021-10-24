@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% if usuario is true %}
+        <header>
+            <nav name="navegacion">
+                <h1 id="logo">Social Mustela putorius</h1>
+                <ul>
+                    <li><a href="/usuario">Usuario</a></li>
+                    <li><a >Cerrar Seccion</a></li>
+                </ul>
+            </nav>
+        </header>
+    {% else %}
+        <header>
+            <nav>
+                <h1 id="logo">Social Mustela putorius</h1>
+                <ul>
+                    <li><a href="/iniciarSeccion">Iniciar Seccion</a></li>
+                    <li><a href="/registrar">Registrarse</a></li>
+                </ul>
+            </nav>
+        </header>
+    {% endif %}
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
