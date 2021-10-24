@@ -53,7 +53,7 @@ def registrar_():
         return render_template("Registrar.html", err = err)
 
 def validarDuplicado(correo):
-    pasa = True
+    pase = True
     listado = Usuario.query.all()
     for i in listado:
         if i.correo == correo:
